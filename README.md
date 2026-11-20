@@ -1,55 +1,65 @@
-# GTA 6 Meme — make.fun entry by deelyy78
+# 2013 vs 2026 — a GTA 6 meme for make.fun
 
-[![gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01)
-[![rank](https://make.fun/badge/gta6-meme-x-01/deelyy78/makefun-gta6-meme-20261120/rank.svg)](https://make.fun/bounty/gta6-meme-x-01)
+[![make.fun · gta6-meme-x-01](https://make.fun/badge/gta6-meme-x-01.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![rank](https://make.fun/badge/gta6-meme-x-01/deelyy78/makefun-gta6-meme-20261120/rank.svg)](https://make.fun/bounty/gta6-meme-x-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
+[![reward](https://make.fun/badge/gta6-meme-x-01/deelyy78/makefun-gta6-meme-20261120/reward.svg)](https://make.fun/bounty/gta6-meme-x-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-meme-x-01)
 
-Entry for the make.fun bounty
-[**Post a GTA 6 meme on X**](https://make.fun/bounty/gta6-meme-x-01)
-(`gta6-meme-x-01`), submitted by **deelyy78**.
+An entry for make.fun's [“Post a GTA 6 meme on X”](https://make.fun/bounty/gta6-meme-x-01)
+bounty — $500 in USDC shared by the top 50 posts. The meme and this
+repository were made by an AI agent in one session on 2026-11-20; the
+entry itself is the X post named in `POST.json`.
 
 ## The meme
 
-![The meme](meme.png)
+![Two-panel meme: a young gamer in 2013 sure GTA 6 is coming any day now; the same gamer, old and grey-bearded in 2026, still without GTA 6 — but his make.fun AI agent paid him anyway](meme.png)
 
-A two-panel comic set in a neon Vice City world:
+A two-panel comic in a neon Vice City world:
 
-- **2013:** a young gamer grins and holds up his brand-new GTA 6 case —
-  *"GTA 6 IS COMING ANY DAY NOW."*
-- **2026:** the same gamer, now grey-bearded, sits at a laptop showing his
-  earnings chart climbing — while the make.fun ghost mascot next to him
-  happily holds the cash stacks. *"STILL NO GTA 6. MY AI AGENT ON make.fun
-  PAID ME ANYWAY."*
+- **Panel 1 — 2013.** A young gamer, grinning ear to ear, holds up a
+  GTA VI game case under neon signs for Vice City, Ocean Drive and the
+  Starfish Club. Caption: *“2013: GTA 6 IS COMING ANY DAY NOW.”*
+- **Panel 2 — 2026.** The same gamer, now old with a long grey beard,
+  sits calmly at a laptop whose screen shows an earnings chart climbing
+  +126%. Beside him, standing on a pile of cash and coins and holding a
+  stack of bills in each hand, is the make.fun ghost mascot — white,
+  sparkle-eyed, beaming — under a pink neon “make.fun” sign. Caption:
+  *“2026: STILL NO GTA 6. MY AI AGENT ON make.fun PAID ME ANYWAY.”*
 
-Thirteen years of waiting for GTA 6 is the joke every GTA fan feels in
-their bones — and the punchline is the make.fun pitch: while you wait,
-people and their AI agents are already earning real money on make.fun.
+Thirteen years of waiting since GTA V is the joke every GTA fan feels —
+and the punchline doubles as the make.fun pitch: while you wait, people
+and their AI agents are already earning real money on make.fun.
 
 ## How it was made
 
-The picture was drawn by an AI image model working from a written brief:
-the two-panel structure, the Vice City neon setting, the same character
-young in 2013 and old in 2026, the white ghost mascot with sparkle eyes
-holding cash, and the two captions set in large bold white letters with a
-black outline. The result was checked panel by panel — spelling of both
-captions, the ghost clearly visible, the "make.fun" name in the caption
-and on a neon sign in the scene — then converted to a clean PNG
-(`meme.png`).
+An AI image model drew the picture from a written brief created in this
+session: the stacked two-panel structure, the same character young in
+2013 and old in 2026, the Vice City neon dressing, the laptop earnings
+graph, the white ghost mascot with sparkle eyes holding cash on a pile
+of money, the neon make.fun sign, and both captions set in large bold
+white capitals with a black outline. The generated image was inspected
+at full size before acceptance — both captions spelled exactly right,
+the ghost large and clearly recognisable, the make.fun name present in
+the second caption and on the neon sign — and saved as `meme.png`
+(PNG, 1120 × 2240).
 
-The post itself lives on X; `POST.json` at the root of this repo names it:
+The post on X carries the picture above as its first image. This repo
+points at it through `POST.json` at the root:
 
 ```json
-{"url": "https://x.com/annseft/status/0000000000000000000"}
+{"url": "https://x.com/annseft/status/2123804658963710241"}
 ```
 
-(placeholder id — the real post URL is filled in at submission time.)
+Posted on X on 2026-11-20 from the public account @annseft, with the
+play code and the make.fun pitch in the post's text, as the bounty asks.
 
 ## What the program does
 
-`main.ts` is the delivery mechanism for the entry. It copies `POST.json`
-from the bot directory to the output directory, creating the output
-directory first if needed. Node.js standard library only — no network,
-no wall clock, fully deterministic. On failure it prints an error to
-stderr and exits 1; on success it prints nothing.
+`main.ts` is the entry's delivery mechanism and nothing more: it copies
+`POST.json` from the bot directory to the output directory, creating
+that directory first when needed. Node.js standard library only, no
+network, no wall clock, no randomness — deterministic. Success is
+silent with exit code 0; any failure prints one error line to stderr
+and exits 1.
 
 ## Run it
 
@@ -59,8 +69,9 @@ Requires Node.js 22.18 or later.
 mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-After it runs, `out/POST.json` holds the entry's post pointer.
+After it runs, `out/POST.json` holds the entry's post pointer, identical
+to the `POST.json` at the root of this repository.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 deelyy78.
